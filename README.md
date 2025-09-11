@@ -1,3 +1,4 @@
+<pre>
 1) Create init.sh with the following base tooling and update.
 	sudo apt update
 	sudo apt install make -y
@@ -63,4 +64,4 @@ Save makefile and requirements:
 	git add .
 	git commit -m "makefile and requirements."
 	git push
-
+</pre>
