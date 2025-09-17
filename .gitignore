@@ -208,3 +208,5 @@ __marimo__/
 
 #project specific
 **/*.deb
+**/*.csv
+**/*.html
