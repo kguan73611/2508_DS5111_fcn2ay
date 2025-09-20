@@ -1,10 +1,23 @@
-import pandas as pd
+"""
+Normalization script for Yahoo Finance and Wall Street Journal stock data.
+"""
 import re
+import pandas as pd
 
 def normalize_yahoo(path):
+    """
+    Normalize a Yahoo Finance CSV file.
+
+    Args:
+        path (str): Path to the CSV file.
+
+    Returns:
+        list[str]: List of rows formatted as
+                   SYMBOL,COMPANY,PRICE,CHANGE,PERC_CHANGE,VOLUME
+    """
     df = pd.read_csv(path)
 
-    # Separate string into 3 columns  with the price, change, and perc_change 
+    # Separate string into 3 columns  with the price, change, and perc_change
     parts = df['Price'].str.extract(
         r'^\s*([\d.,]+)\s+([+\-]?\d+(?:\.\d+)?)\s*\(\s*([+\-]?\d+(?:\.\d+)?)%\s*\)\s*$'
     )
@@ -19,11 +32,22 @@ def normalize_yahoo(path):
     df['perc_change'] = perc
     df['volume'] = df['Volume']
     return [
-        f"{row['symbol']},{row['company_name']},{row['price']},{row['change']},{row['perc_change']},{row['volume']}"
+	f"{row['symbol']},{row['company_name']},{row['price']},"
+	f"{row['change']},{row['perc_change']},{row['volume']}"
         for _, row in df.iterrows()
     ]
 
 def normalize_wsj(path):
+    """
+    Normalize a Wall Street Journal CSV file.
+
+    Args:
+        path (str): Path to the CSV file.
+
+    Returns:
+        list[str]: List of rows formatted as
+                   SYMBOL,COMPANY,PRICE,CHANGE,PERC_CHANGE,VOLUME
+    """
     df = pd.read_csv(path)
 
     # Extract symbol from "Company (TICKER)"
@@ -36,8 +60,8 @@ def normalize_wsj(path):
     df['volume'] = df['Volume']
 
     rows = [
-        f"{row['symbol']},{row['company_name']},{row['price']},{row['change']},{row['perc_change']},{row['volume']}"
-        for _, row in df.iterrows()
+	f"{row['symbol']},{row['company_name']},{row['price']},"
+	f"{row['change']},{row['perc_change']},{row['volume']}"
+	for _, row in df.iterrows()
     ]
     return rows
-
