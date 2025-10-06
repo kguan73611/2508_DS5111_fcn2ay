@@ -1,3 +1,4 @@
+<pre>
 1) Create init.sh with the following base tooling and update.
 	sudo apt update
 	sudo apt install make -y
@@ -63,5 +64,5 @@ Save makefile and requirements:
 	git add .
 	git commit -m "makefile and requirements."
 	git push
-
-[![CI](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/basic.yml/badge.svg?branch=main)](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/basic.yml)
+</pre>
+[![Feature Validation](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/validations.yml/badge.svg)](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/validations.yml)
