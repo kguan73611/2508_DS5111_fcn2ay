@@ -64,3 +64,4 @@ Save makefile and requirements:
 	git commit -m "makefile and requirements."
 	git push
 
+[![CI](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/basic.yml/badge.svg?branch=main)](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/basic.yml)
