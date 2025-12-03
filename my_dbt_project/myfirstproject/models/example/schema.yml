@@ -19,3 +19,18 @@ models:
         data_tests:
           - unique
           - not_null
+  - name: french
+    description: "test french table"
+    columns:
+      - name: FR
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  - name: unique_syms
+    description: "All unique stock symbols from WSJ and Yahoo gainers tables."
+    columns:
+      - name: SYMBOL
+        tests:
+          - unique
+          - not_null
