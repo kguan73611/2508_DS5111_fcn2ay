@@ -26,3 +26,12 @@ def test_os_version():
 
     # THEN it should be Linux
     assert system == "Linux", f"Expected Linux, got {system}"
+
+def test_os():
+    is_linux = sys.platform.startswith("linux") or platform.system() == "Linux"
+    assert is_linux, f"Expected Linux, got sys.platform={sys.platform}, platform.system()={platform.system()}"
+
+def test_python_desired_version():
+    allowed = {(3, 12), (3, 13)}
+    current = (sys.version_info.major, sys.version_info.minor)
+    assert current in allowed, f"Python {current[0]}.{current[1]} is not allowed; expected one of: {sorted(allowed)}"

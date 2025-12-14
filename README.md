@@ -65,3 +65,7 @@ Save makefile and requirements:
 	git commit -m "makefile and requirements."
 	git push
 </pre>
+<<<<<<< HEAD
+=======
+[![Feature Validation](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/validations.yml/badge.svg)](https://github.com/kguan73611/2508_DS5111_fcn2ay/actions/workflows/validations.yml)
+>>>>>>> m04_github_actions_setup
