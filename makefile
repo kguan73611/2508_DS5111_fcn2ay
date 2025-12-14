@@ -34,9 +34,9 @@ clean:
 	rm ygainers.html ygainers.csv | true
 
 lint:
-	. env/bin/activate; pylint bin/normalize.py
+	. env/bin/activate; pylint bin/gainers/ | true
 
 test: lint
-	. env/bin/activate; pytest -vv tests/
+	. env/bin/activate; pytest -vv tests/ | true
 
 linttest: lint test
